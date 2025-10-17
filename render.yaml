@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: moonlight-journal
+    env: python
+    buildCommand: "pip install -r requirements.txt && python -m textblob.download_corpora"
+    startCommand: "gunicorn app:app"
+    plan: free
+    autoDeploy: true
